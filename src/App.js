@@ -4,6 +4,13 @@ import './App.css';
 class App extends Component {
   state = {
     value: '',
+    hide: false,
+  };
+
+  handleAutoFill = event => {
+    this.setState({
+      hide: event.animationName === 'onAutoFillStart',
+    });
   };
 
   render() {
@@ -17,6 +24,7 @@ class App extends Component {
             className="input"
             value={value}
             name="email"
+            onAnimationStart={this.handleAutoFill}
             onChange={event => this.setState({ value: event.target.value })}
           />
         </label>
