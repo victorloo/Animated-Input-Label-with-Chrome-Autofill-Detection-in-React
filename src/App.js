@@ -14,12 +14,13 @@ class App extends Component {
   };
 
   render() {
-    const { value } = this.state;
+    const { value, hide } = this.state;
+    const hideLabel = hide || value;
 
     return (
       <div className="App">
         <label className="input_container">
-          <span className="label">Email</span>
+          <span className={`label ${hideLabel ? 'hide' : ''}`}>Email</span>
           <input
             className="input"
             value={value}

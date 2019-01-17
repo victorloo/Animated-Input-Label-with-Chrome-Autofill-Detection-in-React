@@ -28,11 +28,9 @@
   font-size: 18px;
 }
 
-@keyframes onAutoFillStart {
-}
+@keyframes onAutoFillStart {}
 
-@keyframes onAutoFillCancel {
-}
+@keyframes onAutoFillCancel {}
 
 .input:-webkit-autofill {
   animation-name: onAutoFillStart;
@@ -41,4 +39,11 @@
 
 .input:not(:-webkit-autofill) {
   animation-name: onAutoFillCancel;
+}
+
+.hide {
+  top: -8px;
+  left: 0;
+  font-size: 12px;
+  pointer-events: all;
 }
