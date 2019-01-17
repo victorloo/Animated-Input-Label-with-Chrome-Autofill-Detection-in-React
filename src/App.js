@@ -5,6 +5,7 @@ class App extends Component {
   state = {
     value: '',
     hide: false,
+    focus: false,
   };
 
   handleAutoFill = event => {
@@ -14,8 +15,8 @@ class App extends Component {
   };
 
   render() {
-    const { value, hide } = this.state;
-    const hideLabel = hide || value;
+    const { value, hide, focus } = this.state;
+    const hideLabel = hide || focus || value;
 
     return (
       <div className="App">
@@ -26,6 +27,8 @@ class App extends Component {
             value={value}
             name="email"
             onAnimationStart={this.handleAutoFill}
+            onFocus={() => this.setState({ focus: true })}
+            onBlur={() => this.setState({ focus: false })}
             onChange={event => this.setState({ value: event.target.value })}
           />
         </label>
