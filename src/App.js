@@ -1,25 +1,25 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
+import React, { Component, createRef } from 'react';
 import './App.css';
 
 class App extends Component {
+  state = {
+    value: '',
+  };
+
   render() {
+    const { value } = this.state;
+
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <label className="input_container">
+          <span className="label">Email</span>
+          <input
+            className="input"
+            value={value}
+            name="email"
+            onChange={event => this.setState({ value: event.target.value })}
+          />
+        </label>
       </div>
     );
   }
