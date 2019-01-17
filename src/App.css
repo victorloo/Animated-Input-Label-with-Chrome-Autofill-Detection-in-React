@@ -12,6 +12,12 @@
 .label {
   font-size: 16px;
   line-height: 16px;
+  position: absolute;
+  left: 4px;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: all 0.25s ease;
+  pointer-events: none;
   font-family: Arial, Helvetica, sans-serif;
 }
 
